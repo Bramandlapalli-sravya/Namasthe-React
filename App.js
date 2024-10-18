@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./src/Components/Header.tsx";
+import Header from "./src/Components/Header/Header";
+import Body from "./src/Components/Body/Body";
+import store from "./src/Redux/store";
+import { Provider } from "react-redux";
 
 const heading = React.createElement("h1", { id: "first-heading" }, [
   React.createElement("h2", {}, [
@@ -29,9 +32,10 @@ const heading = React.createElement("h1", { id: "first-heading" }, [
 
 export const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
-    </div>
+      <Body />
+    </Provider>
   );
 };
 
