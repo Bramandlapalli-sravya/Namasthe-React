@@ -5,14 +5,16 @@
 }
 
 .recipe-img {
-  object-fit: contain;
+  object-fit: cover;
   width: 300px;
-  height: 200px;
+  height: 160px;
+  box-sizing: border-box;
+  border-radius: 20px;
 }
 
 .item-blog {
-  border: 1px solid black;
-  padding: 10px 20px;
+  border-radius: 20px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +24,22 @@
   h1 {
     font-size: 16px;
   }
+
+  h2 {
+    font-size: 12px;
+    margin: 8px 0 0 0;
+
+    span {
+      color: rgb(80, 79, 79);
+    }
+  }
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 20px;
 }
 
 button {
@@ -31,4 +49,35 @@ button {
   padding: 10px 20px;
   margin: 6px;
   border-radius: 20px;
+  cursor: pointer;
 }
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out ;
+  padding: 0 15px;
+}
+
+.accordion-content.open  {
+  div{
+    padding: 10px;
+  } 
+  max-height: 200px;
+  }
+
+input, textarea{
+  border: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: aliceblue;
+  padding: 10px;
+  width: 400px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 

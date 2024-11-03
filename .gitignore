@@ -1,6 +1,7 @@
 node_modules  
 dist
 .parcel-cache
+/coverage
 
 # Parcel 
 
@@ -21,3 +22,28 @@ dist
 - HTTPs
 - Tree shaking algorithm - remove unused code
 - Different Dev and production bundles
+
+# Redux 
+ - Install @reduxjs/toolkit and react-redux
+ - Build our store
+ - connect out store
+ - create a cartslice
+ - dispatch action
+ - read the data selector
+
+# Developer Testing
+Types of Testings
+ - Unit Testing
+ - Integration Testing
+ - End to End Testing - e2e Testing
+
+# Setting up Testing in our app
+- Install React Testing Library
+- Install Jest
+- Babel Dependency require with Jest
+- configure babel Dependency like file "babel.config.js"
+- configured parcel config file to disable default babel traspilation
+- Jest Configuration
+- Install @babel/preset-react - to make jsx work in test cases
+- Include @babel/preset-react - In babel config // ['@babel/preset-react', {runtime: 'automatic'}]
+- Install testing library - @testing-library/jest-dom

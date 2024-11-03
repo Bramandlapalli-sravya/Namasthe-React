@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+    height: 100vh;
+    margin: 0;  
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loader-block {
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgba(253, 239, 239, 0.993);
+    background: linear-gradient(to right, #faf7f7 8%, #f7f5f5 18%, #f6f6f6 33%);
+}
+
+.loaders {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.full {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
