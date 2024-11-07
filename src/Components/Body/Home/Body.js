@@ -5,6 +5,7 @@ import "../../Body/style.css";
 import RestaurantList from "./RestaurantList.tsx";
 import Loader from "../../Loader/Loader";
 import UseOnlineStatus from "./../../../Utilitis/useOnlineStatus.js";
+import useDebounce from "../../../Utilitis/useDebounce.js";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -34,8 +35,8 @@ const Body = () => {
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/";
 
   // Handle debounced search
-  useEffect(() => {
-    const debounce = setTimeout(() => {
+
+  const search = () => {
       if (searchInput) {
         const filteredItems = items?.filter((restaurant) =>
           restaurant?.info?.name
@@ -52,9 +53,12 @@ const Body = () => {
         setItemNotFound(false);
         setFiltered(items);
       }
-    }, 500);
+  }
 
-    return () => clearTimeout(debounce);
+  const debounceSearch =  useDebounce(search, 5000);
+
+  useEffect(() => {
+    debounceSearch();
   }, [items, searchInput]);
 
   // Update filtered items when items change

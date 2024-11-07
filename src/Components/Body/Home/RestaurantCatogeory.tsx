@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../../../Redux/cartItemSlice.js";
+import RestaurantCategoryJson from '../../MockDataApi/RestaurantCategeory.json'
 
 interface RootState {
     cart: {
@@ -43,9 +44,11 @@ const RestaurantCategory: React.FC<RestaurantCategoryProps> = ({ id }) => {
 
     const fetchCategory = async (id: string) => {
         try {
-            const response = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4325894&lng=78.4070691&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`);
-            const data = await response.json();
+            // const response = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4325894&lng=78.4070691&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`);
+            // const data = await response.json();
+            const data = RestaurantCategoryJson;
             // console.log(data, 'restaunt-category')
+            console.log(data, 'restaurant-catogeory')
             const itemCategory = data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards;
             const itemCategoryCard = itemCategory.filter((card) => card?.card?.card?.['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
             setItemCategoryList(itemCategoryCard);

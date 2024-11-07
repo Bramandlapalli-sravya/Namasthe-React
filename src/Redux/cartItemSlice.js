@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
+import swiggyApiData from '../Components/MockDataApi/swiggyApiData.json';
 
 export const fetchedItems = createAsyncThunk("data/recipes", async (searchValue, { rejectWithValue }) => {
   try{
@@ -6,13 +7,14 @@ export const fetchedItems = createAsyncThunk("data/recipes", async (searchValue,
   // const response = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=17.37240&lng=78.43780&str=${searchValue}&includeIMItem=true`);
   // above code is for searching the items api 
 
-  const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4325894&lng=78.4070691&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
-  console.log(response, 'response')
-  const items = await response.json();
+  // const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4325894&lng=78.4070691&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+  // console.log(response, 'response')
+  const items = swiggyApiData;
+  // const items = await response.json();
   console.log('total-cart-items', items)
   const data  = items?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-  console.log(items, 'item-dta')
-  console.log(searchValue, 'searchValue')
+  console.log("items data", data)
+  // console.log(searchValue, 'searchValue')
   return data;
   } catch(error) {
     return rejectWithValue(error.message);
@@ -56,12 +58,15 @@ const cartItemSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
+    console.log("fetchedItems full", fetchedItems.fulfilled)
     builder.addCase(fetchedItems.fulfilled, (state, action) => {
+      console.log("fullfilled", action.payload)
       state.items = action.payload;
       state.status = "success";
       state.error = null
     });
     builder.addCase(fetchedItems.rejected, (state, action) => {
+      console.log("error", action.payload)
       state.error = action.payload;
       state.status = "error";
     });
