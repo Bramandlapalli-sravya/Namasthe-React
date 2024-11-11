@@ -68,11 +68,11 @@ const router = createBrowserRouter([
         element: <Navigate to="/home" replace /> // Redirect to "/home" as the default route
       },
       {
-        path: '/home',
+        path: 'home',
         element: <Body/>,
       },
       {
-        path: '/contact',
+        path: 'contact',
         element: <Suspense fallback={ <p className="flex flex-1 items-center justify-center">Loading...</p>}><Contact /></Suspense>,
       },
       // {
@@ -80,11 +80,11 @@ const router = createBrowserRouter([
       //   element: <Suspense fallback={'loading.....'}><About name={'swiggy'} number={200}/></Suspense>,
       // },
       {
-        path:`/home/:name`,
+        path:`home/:name`,
         element: <Suspense fallback={ <p className="flex flex-1 items-center justify-center">Loading...</p>}><Restaurant/></Suspense>,
       },
       {
-        path:`/cart`,
+        path:`cart`,
         element: <Suspense fallback={ <p className="flex flex-1 items-center justify-center">Loading...</p>}><CartComponent/></Suspense>,
       },
     ],
