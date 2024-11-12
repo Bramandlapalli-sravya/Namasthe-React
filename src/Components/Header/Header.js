@@ -18,12 +18,12 @@ const Header = () => {
 const onlineStatus = UseOnlineStatus();
 
   return (
-    <div className="header shadow-md px-14 py-3 text-orange-600 text-">
-      <div className="logo-container">
+    <div className="header shadow-md md:px-14 py-3 text-orange-600 sm:px-1 flex-wrap justify-center md:justify-between">
+      <div className="logo-container sm: mb-4">
         <img src={logo} loading="lazy" width={260} height={80} alt="logo"/>
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="nav-items sm: px-4 flex">
+        <ul className="md:gap-6 sm:flex flex-wrap justify-center gap-4">
           {/* <li onClick={()=>handleHomeClick('/')}>Home</li>
           <li onClick={()=>handleHomeClick(`/about`)}>About Us</li> */}
             {/* or */}

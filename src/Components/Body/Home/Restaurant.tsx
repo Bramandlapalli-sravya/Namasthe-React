@@ -36,12 +36,12 @@ const Restaurant = () => {
     
     const CDN = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/';
 
-    return item ? (
-        <div key={item.id} className="flex flex-col overflow-auto flex-1 px-32 pt-16">
+    return !item ? (
+        <div key={item?.id} className="flex flex-col overflow-auto flex-1 md:px-32 md:pt-16 sm: px-4 pt-3">
             <div className="p-4 rounded-3xl border border-gray-200 border-t-0 ">
                 <h1 className="text-2xl p-4 font-extrabold">{item?.info?.name}</h1>
                 <div className="flex flex-col border rounded-3xl border-slate-300 p-3 shadow-2xl gap-1">
-                    <h2 className="flex items-center font-bold"><span>{item?.info?.avgRating}({item.info.totalRatingsString}) ratings - <span>{item.info.costForTwo}</span></span></h2>
+                    <h2 className="flex items-center font-bold"><span>{item?.info?.avgRating}({item?.info?.totalRatingsString}) ratings - <span>{item?.info?.costForTwo}</span></span></h2>
                     {/* <h2>Locality: <span>{item.info.locality}</span></h2>
                     <h2>Delivery In: <span>{item.info.sla.slaString}</span></h2> */}
                     <h2 className="text-orange-600 font-semibold text-sm underline">{item?.info?.cuisines.map((cuisine, index)=> {
@@ -51,7 +51,7 @@ const Restaurant = () => {
                     <h2 className="text-sm">{item?.info?.sla?.slaString}</h2>
                 </div>
             </div>
-            <RestaurantCatogeory id={item.info.id}/>
+            <RestaurantCatogeory id={item?.info?.id}/>
         </div>
     ) : (
         <p className="flex flex-1 items-center justify-center">Loading...</p>

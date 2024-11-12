@@ -8,7 +8,7 @@ const handleSubmit = () => {
     if(submittedText) return submittedText.innerHTML = 'Form submitted Succesfully';
 }
 
-    return (<form className="flex flex-col font-bold p-6 gap-6 items-center" onSubmit={handleSubmit}>
+    return (<form className="flex flex-col font-bold p-6 gap-6 items-center bg-red-600" onSubmit={handleSubmit}>
         <h1 className="text-3xl py-7 flex justify-self-center">Contact</h1>
         <label htmlFor="name" className="flex gap-5 items-center">
             <span className="w-1/4">Name:</span>

@@ -18,7 +18,6 @@
 .nav-items ul {
   list-style: none;
   display: flex;
-  gap: 40px;
 }
 
 .nav-items ul li {

@@ -99,14 +99,14 @@ const RestaurantCategory: React.FC<RestaurantCategoryProps> = ({ id }) => {
                         {recommendedList && currentTitle === title &&
                             <ul className="flex flex-col gap-6 justify-center">
                                 {item?.card?.card?.itemCards?.map((item) => (
-                                    <li key={item?.card?.info?.id} className="flex justify-between border-b-2 pb-4">
-                                        <div className="border-b-slate-800 w-3/4 flex flex-col justify-center gap-2">
+                                    <li key={item?.card?.info?.id} className="flex md:flex-row justify-between gap-6 border-b-2 pb-4 sm: flex-col text-center">
+                                        <div className="border-b-slate-800 md:w-3/4 md:items-start flex flex-col gap-2 sm: w-full justify-center">
                                             <div className="font-bold text-gray-800">{item?.card?.info?.name}</div>
-                                            <div className="flex items-center">
+                                            <div className="flex items-center sm: justify-center">
                                                 <div>{rupeeIcon}</div>
                                                 <h2 className="text-black font-bold">{item.card.info.defaultPrice / 100 || item.card.info.finalPrice / 100 || item.card.info.price / 100}</h2>
                                             </div>
-                                            <p className="text-slate-800 text-wrap">{item?.card?.info?.description}</p>
+                                            <p className="text-slate-800 text-wrap md:flex text-start">{item?.card?.info?.description}</p>
                                         </div>
                                         <div className="relative">
                                             <LazyLoadImage
