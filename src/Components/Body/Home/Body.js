@@ -55,7 +55,7 @@ const Body = () => {
       }
   }
 
-  const debounceSearch =  useDebounce(search, 5000);
+  const debounceSearch =  useDebounce(search, 3000);
 
   useEffect(() => {
     debounceSearch();
