@@ -36,7 +36,7 @@ const Restaurant = () => {
     
     const CDN = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/';
 
-    return !item ? (
+    return item ? (
         <div key={item?.id} className="flex flex-col overflow-auto flex-1 md:px-32 md:pt-16 sm: px-4 pt-3">
             <div className="p-4 rounded-3xl border border-gray-200 border-t-0 ">
                 <h1 className="text-2xl p-4 font-extrabold">{item?.info?.name}</h1>

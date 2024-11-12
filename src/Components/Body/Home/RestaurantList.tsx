@@ -29,7 +29,7 @@ interface RestaurantListProps {
 
 const RestaurantList: React.FC<RestaurantListProps> = ({ filtered, CDN }) => {
   return (
-    <div className="items sm: flex justify-center">
+    <div className="items flex md:justify-start justify-center">
       {filtered?.map((recipe) => (
         <Link key={recipe.info.id} to={`/home/${recipe.info.name}`}>
           <div

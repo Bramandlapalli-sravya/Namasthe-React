@@ -77,7 +77,7 @@ const Body = () => {
 
   // Render content based on status
   return (
-    <div className="recipe-list gap-3">
+    <div className="recipe-list gap-3 md: flex justify-start items-start">
       <div className="search sm: flex flex-wrap justify-center gap-5">
         <input
           type="text"
