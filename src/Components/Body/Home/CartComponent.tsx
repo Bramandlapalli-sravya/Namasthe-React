@@ -61,7 +61,7 @@ const CartComponent = () => {
                                 </div>
                             </li>
                         )
-                        }) : <div className="flex flex-col justify-center items-center pt-48 text-md">
+                        }) : <div className="flex flex-col justify-center items-center pt-48 text-md text-center">
                             <p>Your Cart is empty</p>
                             <p>You can go to <Link to={'/home'} className="text-blue-800">Home</Link> page to view more restaurants</p>
                         </div>
