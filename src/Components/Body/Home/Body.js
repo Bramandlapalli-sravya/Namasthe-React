@@ -78,10 +78,10 @@ const Body = () => {
   // Render content based on status
   return (
     <div className="recipe-list gap-3 md: flex justify-start items-start">
-      <div className="search sm: flex flex-wrap justify-center gap-5">
+      <div className="search flex sm: flex-wrap sm: justify-center w-full gap-5 md:justify-start">
         <input
           type="text"
-          className="px-3 py-1"
+          className="px-3 py-1 w-full md:w-96"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           placeholder="Search for a recipe..."
